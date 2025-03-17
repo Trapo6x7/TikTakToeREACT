@@ -1,42 +1,148 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Reset de base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #652cc9;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.2em;
+  color: #d014ff;
+  text-shadow: 0 0 10px #d014ff;
+}
+
+h2 {
+  font-size: 2em;
+  color: #ddd;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+/* Centrage du jeu en mode rectangle */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 400px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Style des cases */
+.square {
+  background: #444;
+  border: 2px solid #555;
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 60px;
+  height: 60px;
+  width: 60px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
   text-align: center;
+  color: #fff;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.square:hover {
+  background: #6e6e6e;
+  cursor: pointer;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
+.square:disabled {
+  background: #222;
   color: #888;
+  cursor: not-allowed;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #d014ff;
+}
+
+.game-info {
+  margin-left: 10px;
+  font-size: 0.9em;
+  color: #ddd;
+  line-height: 1.2;
+  max-width: 200px;
+}
+
+.game-info ol {
+  list-style: none;
+  padding: 0;
+}
+
+.game-info li button {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+/* Style du bouton reset */
+button {
+  border: 1px solid #444;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #6e6e6e;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+
+button:hover {
+  border-color: #d014ff;
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 12px #d014ff;
+  transform: scale(1.1);
+}
+
+button:disabled {
+  background-color: #222;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
 }
